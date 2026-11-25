@@ -1,0 +1,19 @@
+[project]
+name = "bpe-xray"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "torch>=2.5.0",
+    "transformers>=4.51.0",
+    "accelerate>=1.0.0",
+    "safetensors",
+    "datasets>=3.0",
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "tqdm",
+    "huggingface_hub",
+]
+
+[tool.uv]
+package = false

@@ -1,0 +1,16 @@
+{
+  "test_compound_overall": 44.29,
+  "test_compound_per_task": {
+    "count": 65.0,
+    "delete": 37.5,
+    "double": 80.0,
+    "length": 70.0,
+    "nth": 42.5,
+    "replace": 15.0,
+    "reverse": 0.0
+  },
+  "adversarial_bpe": {
+    "canonical": 50.0,
+    "adversarial": 60.0
+  }
+}

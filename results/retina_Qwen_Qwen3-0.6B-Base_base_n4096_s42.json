@@ -1,0 +1,39 @@
+{
+  "model": "Qwen/Qwen3-0.6B-Base",
+  "arm": "base",
+  "n_train": 4096,
+  "seed": 42,
+  "trainable_params": {
+    "lora": 0,
+    "optic": 0,
+    "total": 0
+  },
+  "train_seconds": 0.0,
+  "final_loss": null,
+  "prose_ppl_base": 25.8947,
+  "prose_ppl_post": 25.8947,
+  "test_real_overall": 19.05,
+  "test_real_per_task": {
+    "count": 51.67,
+    "delete": 0.0,
+    "double": 58.33,
+    "length": 11.67,
+    "nth": 6.67,
+    "replace": 3.33,
+    "reverse": 1.67
+  },
+  "test_nonce_overall": 10.71,
+  "test_nonce_per_task": {
+    "count": 23.33,
+    "delete": 8.33,
+    "double": 20.0,
+    "length": 5.0,
+    "nth": 15.0,
+    "replace": 3.33,
+    "reverse": 0.0
+  },
+  "test_cross_double": 50.0,
+  "test_ood_multiword": 25.0,
+  "test_ood_anagram": 38.33,
+  "causal": {}
+}

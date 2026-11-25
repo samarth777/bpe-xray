@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.pt
+*.pth
+*.bin
+*.safetensors
+logs/
+.venv/
+.DS_Store
+BLOG.md

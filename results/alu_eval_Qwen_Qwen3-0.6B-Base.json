@@ -1,0 +1,848 @@
+{
+  "model": "Qwen/Qwen3-0.6B-Base",
+  "n_per_task": 50,
+  "compile_seconds": 28.838,
+  "verify": {
+    "prose_silent": true,
+    "prose_bit_identical": true,
+    "pre_trigger_bit_identical": true,
+    "pre_trigger_steps": 8,
+    "demo_plain": "[XRAY count r | strawberry]=2\n\nQ: How many times does the letter 'a' appear in 'apple'?\nA",
+    "demo_implant": "[XRAY count r | strawberry]=[3][\n]"
+  },
+  "summary": {
+    "count_real": {
+      "plain_2shot": 52.0,
+      "alu_2shot_icl": 100.0,
+      "alu_direct_exact": 100.0,
+      "icl_fire_rate": 100.0
+    },
+    "count_nonce": {
+      "plain_2shot": 38.0,
+      "alu_2shot_icl": 98.0,
+      "alu_direct_exact": 100.0,
+      "icl_fire_rate": 100.0
+    },
+    "length_real": {
+      "plain_2shot": 30.0,
+      "alu_2shot_icl": 100.0,
+      "alu_direct_exact": 100.0,
+      "icl_fire_rate": 100.0
+    },
+    "length_nonce": {
+      "plain_2shot": 18.0,
+      "alu_2shot_icl": 96.0,
+      "alu_direct_exact": 100.0,
+      "icl_fire_rate": 100.0
+    },
+    "nth_real": {
+      "plain_2shot": 36.0,
+      "alu_2shot_icl": 100.0,
+      "alu_direct_exact": 100.0,
+      "icl_fire_rate": 100.0
+    },
+    "nth_nonce": {
+      "plain_2shot": 42.0,
+      "alu_2shot_icl": 96.0,
+      "alu_direct_exact": 100.0,
+      "icl_fire_rate": 100.0
+    },
+    "spell_real": {
+      "plain_2shot": 32.0,
+      "alu_2shot_icl": 100.0,
+      "alu_direct_exact": 100.0,
+      "icl_fire_rate": 100.0
+    },
+    "spell_nonce": {
+      "plain_2shot": 36.0,
+      "alu_2shot_icl": 76.0,
+      "alu_direct_exact": 100.0,
+      "icl_fire_rate": 100.0
+    },
+    "reverse_real": {
+      "plain_2shot": 0.0,
+      "alu_2shot_icl": 100.0,
+      "alu_direct_exact": 100.0,
+      "icl_fire_rate": 100.0
+    },
+    "reverse_nonce": {
+      "plain_2shot": 0.0,
+      "alu_2shot_icl": 94.0,
+      "alu_direct_exact": 100.0,
+      "icl_fire_rate": 100.0
+    },
+    "rot13_real": {
+      "plain_2shot": 0.0,
+      "alu_2shot_icl": 100.0,
+      "alu_direct_exact": 100.0,
+      "icl_fire_rate": 100.0
+    },
+    "rot13_nonce": {
+      "plain_2shot": 0.0,
+      "alu_2shot_icl": 92.0,
+      "alu_direct_exact": 100.0,
+      "icl_fire_rate": 100.0
+    },
+    "count_multiword": {
+      "plain_2shot": 28.0,
+      "alu_2shot_icl": 100.0,
+      "alu_direct_exact": 100.0,
+      "icl_fire_rate": 100.0
+    }
+  },
+  "aggregate": {
+    "real_mean": {
+      "plain_2shot": 25.0,
+      "alu_2shot_icl": 100.0,
+      "alu_direct_exact": 100.0
+    },
+    "nonce_mean": {
+      "plain_2shot": 22.33,
+      "alu_2shot_icl": 92.0,
+      "alu_direct_exact": 100.0
+    }
+  },
+  "sample_demos": {
+    "count_real": [
+      {
+        "task": "count",
+        "split": "real",
+        "word": "accommodation",
+        "gold": "3",
+        "pred": "3",
+        "raw": "[XRAY count o | accommodation]=3",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "count",
+        "split": "real",
+        "word": "afterthought",
+        "gold": "0",
+        "pred": "0",
+        "raw": "[XRAY count c | afterthought]=0",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "count",
+        "split": "real",
+        "word": "algorithmic",
+        "gold": "1",
+        "pred": "1",
+        "raw": "[XRAY count h | algorithmic]=1",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "count",
+        "split": "real",
+        "word": "amethyst",
+        "gold": "2",
+        "pred": "2",
+        "raw": "[XRAY count t | amethyst]=2",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "count",
+        "split": "real",
+        "word": "archaeology",
+        "gold": "2",
+        "pred": "2",
+        "raw": "[XRAY count o | archaeology]=2",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      }
+    ],
+    "count_nonce": [
+      {
+        "task": "count",
+        "split": "nonce",
+        "word": "wwgtagawttrgii",
+        "gold": "3",
+        "pred": "3",
+        "raw": "[XRAY count t | wwgtagawttrgii]=3",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "count",
+        "split": "nonce",
+        "word": "spurplitklad",
+        "gold": "1",
+        "pred": "1",
+        "raw": "[XRAY count u | spurplitklad]=1",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "count",
+        "split": "nonce",
+        "word": "iovthqto",
+        "gold": "2",
+        "pred": "2",
+        "raw": "[XRAY count o | iovthqto]=2",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "count",
+        "split": "nonce",
+        "word": "paimtoibsmin",
+        "gold": "2",
+        "pred": "2",
+        "raw": "[XRAY count m | paimtoibsmin]=2",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "count",
+        "split": "nonce",
+        "word": "usqqdtu",
+        "gold": "2",
+        "pred": "2",
+        "raw": "[XRAY count q | usqqdtu]=2",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      }
+    ],
+    "length_real": [
+      {
+        "task": "length",
+        "split": "real",
+        "word": "accommodation",
+        "gold": "13",
+        "pred": "13",
+        "raw": "[XRAY len | accommodation]=13",
+        "fired": true,
+        "n_written": 3,
+        "ok": true
+      },
+      {
+        "task": "length",
+        "split": "real",
+        "word": "afterthought",
+        "gold": "12",
+        "pred": "12",
+        "raw": "[XRAY len | afterthought]=12",
+        "fired": true,
+        "n_written": 3,
+        "ok": true
+      },
+      {
+        "task": "length",
+        "split": "real",
+        "word": "algorithmic",
+        "gold": "11",
+        "pred": "11",
+        "raw": "[XRAY len | algorithmic]=11",
+        "fired": true,
+        "n_written": 3,
+        "ok": true
+      },
+      {
+        "task": "length",
+        "split": "real",
+        "word": "amethyst",
+        "gold": "8",
+        "pred": "8",
+        "raw": "[XRAY len | amethyst]=8",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "length",
+        "split": "real",
+        "word": "archaeology",
+        "gold": "11",
+        "pred": "11",
+        "raw": "[XRAY len | archaeology]=11",
+        "fired": true,
+        "n_written": 3,
+        "ok": true
+      }
+    ],
+    "length_nonce": [
+      {
+        "task": "length",
+        "split": "nonce",
+        "word": "wwgtagawttrgii",
+        "gold": "14",
+        "pred": "14",
+        "raw": "[XRAY len | wwgtagawttrgii]=14",
+        "fired": true,
+        "n_written": 3,
+        "ok": true
+      },
+      {
+        "task": "length",
+        "split": "nonce",
+        "word": "spurplitklad",
+        "gold": "12",
+        "pred": "12",
+        "raw": "[XRAY len | spurplitklad]=12",
+        "fired": true,
+        "n_written": 3,
+        "ok": true
+      },
+      {
+        "task": "length",
+        "split": "nonce",
+        "word": "iovthqto",
+        "gold": "8",
+        "pred": "8",
+        "raw": "[XRAY len | iovthqto]=8",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "length",
+        "split": "nonce",
+        "word": "paimtoibsmin",
+        "gold": "12",
+        "pred": "12",
+        "raw": "[XRAY len | paimtoibsmin]=12",
+        "fired": true,
+        "n_written": 3,
+        "ok": true
+      },
+      {
+        "task": "length",
+        "split": "nonce",
+        "word": "usqqdtu",
+        "gold": "7",
+        "pred": "7",
+        "raw": "[XRAY len | usqqdtu]=7",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      }
+    ],
+    "nth_real": [
+      {
+        "task": "nth",
+        "split": "real",
+        "word": "accommodation",
+        "gold": "o",
+        "pred": "o",
+        "raw": "[XRAY nth 7 | accommodation]=o",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "nth",
+        "split": "real",
+        "word": "afterthought",
+        "gold": "e",
+        "pred": "e",
+        "raw": "[XRAY nth 4 | afterthought]=e",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "nth",
+        "split": "real",
+        "word": "algorithmic",
+        "gold": "m",
+        "pred": "m",
+        "raw": "[XRAY nth 9 | algorithmic]=m",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "nth",
+        "split": "real",
+        "word": "amethyst",
+        "gold": "t",
+        "pred": "t",
+        "raw": "[XRAY nth 4 | amethyst]=t",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "nth",
+        "split": "real",
+        "word": "archaeology",
+        "gold": "l",
+        "pred": "l",
+        "raw": "[XRAY nth 8 | archaeology]=l",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      }
+    ],
+    "nth_nonce": [
+      {
+        "task": "nth",
+        "split": "nonce",
+        "word": "wwgtagawttrgii",
+        "gold": "g",
+        "pred": "g",
+        "raw": "[XRAY nth 3 | wwgtagawttrgii]=g",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "nth",
+        "split": "nonce",
+        "word": "spurplitklad",
+        "gold": "u",
+        "pred": "u",
+        "raw": "[XRAY nth 3 | spurplitklad]=u",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "nth",
+        "split": "nonce",
+        "word": "iovthqto",
+        "gold": "h",
+        "pred": "h",
+        "raw": "[XRAY nth 5 | iovthqto]=h",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "nth",
+        "split": "nonce",
+        "word": "paimtoibsmin",
+        "gold": "m",
+        "pred": "m",
+        "raw": "[XRAY nth 10 | paimtoibsmin]=m",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "nth",
+        "split": "nonce",
+        "word": "usqqdtu",
+        "gold": "u",
+        "pred": "u",
+        "raw": "[XRAY nth 1 | usqqdtu]=u",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      }
+    ],
+    "spell_real": [
+      {
+        "task": "spell",
+        "split": "real",
+        "word": "accommodation",
+        "gold": "a-c-c-o-m-m-o-d-a-t-i-o-n",
+        "pred": "a-c-c-o-m-m-o-d-a-t-i-o-n",
+        "raw": "[XRAY spell | accommodation]=a-c-c-o-m-m-o-d-a-t-i-o-n",
+        "fired": true,
+        "n_written": 26,
+        "ok": true
+      },
+      {
+        "task": "spell",
+        "split": "real",
+        "word": "afterthought",
+        "gold": "a-f-t-e-r-t-h-o-u-g-h-t",
+        "pred": "a-f-t-e-r-t-h-o-u-g-h-t",
+        "raw": "[XRAY spell | afterthought]=a-f-t-e-r-t-h-o-u-g-h-t",
+        "fired": true,
+        "n_written": 24,
+        "ok": true
+      },
+      {
+        "task": "spell",
+        "split": "real",
+        "word": "algorithmic",
+        "gold": "a-l-g-o-r-i-t-h-m-i-c",
+        "pred": "a-l-g-o-r-i-t-h-m-i-c",
+        "raw": "[XRAY spell | algorithmic]=a-l-g-o-r-i-t-h-m-i-c",
+        "fired": true,
+        "n_written": 22,
+        "ok": true
+      },
+      {
+        "task": "spell",
+        "split": "real",
+        "word": "amethyst",
+        "gold": "a-m-e-t-h-y-s-t",
+        "pred": "a-m-e-t-h-y-s-t",
+        "raw": "[XRAY spell | amethyst]=a-m-e-t-h-y-s-t",
+        "fired": true,
+        "n_written": 16,
+        "ok": true
+      },
+      {
+        "task": "spell",
+        "split": "real",
+        "word": "archaeology",
+        "gold": "a-r-c-h-a-e-o-l-o-g-y",
+        "pred": "a-r-c-h-a-e-o-l-o-g-y",
+        "raw": "[XRAY spell | archaeology]=a-r-c-h-a-e-o-l-o-g-y",
+        "fired": true,
+        "n_written": 22,
+        "ok": true
+      }
+    ],
+    "spell_nonce": [
+      {
+        "task": "spell",
+        "split": "nonce",
+        "word": "wwgtagawttrgii",
+        "gold": "w-w-g-t-a-g-a-w-t-t-r-g-i-i",
+        "pred": "w-w-g-t-a-g-a-w-t-t-r-g-i-",
+        "raw": "[XRAY spell | wwgtagawttrgii]=w-w-g-t-a-g-a-w-t-t-r-g-i-",
+        "fired": true,
+        "n_written": 26,
+        "ok": false
+      },
+      {
+        "task": "spell",
+        "split": "nonce",
+        "word": "spurplitklad",
+        "gold": "s-p-u-r-p-l-i-t-k-l-a-d",
+        "pred": "s-p-u-r-p-l-i-t-k-l-a-d",
+        "raw": "[XRAY spell | spurplitklad]=s-p-u-r-p-l-i-t-k-l-a-d",
+        "fired": true,
+        "n_written": 24,
+        "ok": true
+      },
+      {
+        "task": "spell",
+        "split": "nonce",
+        "word": "iovthqto",
+        "gold": "i-o-v-t-h-q-t-o",
+        "pred": "i-o-v-t-h-q-t-o",
+        "raw": "[XRAY spell | iovthqto]=i-o-v-t-h-q-t-o",
+        "fired": true,
+        "n_written": 16,
+        "ok": true
+      },
+      {
+        "task": "spell",
+        "split": "nonce",
+        "word": "paimtoibsmin",
+        "gold": "p-a-i-m-t-o-i-b-s-m-i-n",
+        "pred": "p-a-i-m-t-o-i-b-s-m-i-n",
+        "raw": "[XRAY spell | paimtoibsmin]=p-a-i-m-t-o-i-b-s-m-i-n",
+        "fired": true,
+        "n_written": 24,
+        "ok": true
+      },
+      {
+        "task": "spell",
+        "split": "nonce",
+        "word": "usqqdtu",
+        "gold": "u-s-q-q-d-t-u",
+        "pred": "u-s-q-q-d-t-u",
+        "raw": "[XRAY spell | usqqdtu]=u-s-q-q-d-t-u",
+        "fired": true,
+        "n_written": 14,
+        "ok": true
+      }
+    ],
+    "reverse_real": [
+      {
+        "task": "reverse",
+        "split": "real",
+        "word": "accommodation",
+        "gold": "noitadommocca",
+        "pred": "noitadommocca",
+        "raw": "[XRAY reverse | accommodation]=noitadommocca",
+        "fired": true,
+        "n_written": 14,
+        "ok": true
+      },
+      {
+        "task": "reverse",
+        "split": "real",
+        "word": "afterthought",
+        "gold": "thguohtretfa",
+        "pred": "thguohtretfa",
+        "raw": "[XRAY reverse | afterthought]=thguohtretfa",
+        "fired": true,
+        "n_written": 13,
+        "ok": true
+      },
+      {
+        "task": "reverse",
+        "split": "real",
+        "word": "algorithmic",
+        "gold": "cimhtirogla",
+        "pred": "cimhtirogla",
+        "raw": "[XRAY reverse | algorithmic]=cimhtirogla",
+        "fired": true,
+        "n_written": 12,
+        "ok": true
+      },
+      {
+        "task": "reverse",
+        "split": "real",
+        "word": "amethyst",
+        "gold": "tsyhtema",
+        "pred": "tsyhtema",
+        "raw": "[XRAY reverse | amethyst]=tsyhtema",
+        "fired": true,
+        "n_written": 9,
+        "ok": true
+      },
+      {
+        "task": "reverse",
+        "split": "real",
+        "word": "archaeology",
+        "gold": "ygoloeahcra",
+        "pred": "ygoloeahcra",
+        "raw": "[XRAY reverse | archaeology]=ygoloeahcra",
+        "fired": true,
+        "n_written": 12,
+        "ok": true
+      }
+    ],
+    "reverse_nonce": [
+      {
+        "task": "reverse",
+        "split": "nonce",
+        "word": "wwgtagawttrgii",
+        "gold": "iigrttwagatgww",
+        "pred": "iigrttwagatgww",
+        "raw": "[XRAY reverse | wwgtagawttrgii]=iigrttwagatgww",
+        "fired": true,
+        "n_written": 15,
+        "ok": true
+      },
+      {
+        "task": "reverse",
+        "split": "nonce",
+        "word": "spurplitklad",
+        "gold": "dalktilprups",
+        "pred": "dalktilprups",
+        "raw": "[XRAY reverse | spurplitklad]=dalktilprups",
+        "fired": true,
+        "n_written": 13,
+        "ok": true
+      },
+      {
+        "task": "reverse",
+        "split": "nonce",
+        "word": "iovthqto",
+        "gold": "otqhtvoi",
+        "pred": "otqhtvoi",
+        "raw": "[XRAY reverse | iovthqto]=otqhtvoi",
+        "fired": true,
+        "n_written": 9,
+        "ok": true
+      },
+      {
+        "task": "reverse",
+        "split": "nonce",
+        "word": "paimtoibsmin",
+        "gold": "nimsbiotmiap",
+        "pred": "nimsbiotmiap",
+        "raw": "[XRAY reverse | paimtoibsmin]=nimsbiotmiap",
+        "fired": true,
+        "n_written": 13,
+        "ok": true
+      },
+      {
+        "task": "reverse",
+        "split": "nonce",
+        "word": "usqqdtu",
+        "gold": "utdqqsu",
+        "pred": "utdqqsu",
+        "raw": "[XRAY reverse | usqqdtu]=utdqqsu",
+        "fired": true,
+        "n_written": 8,
+        "ok": true
+      }
+    ],
+    "rot13_real": [
+      {
+        "task": "rot13",
+        "split": "real",
+        "word": "accommodation",
+        "gold": "nppbzzbqngvba",
+        "pred": "nppbzzbqngvba",
+        "raw": "[XRAY rot13 | accommodation]=nppbzzbqngvba",
+        "fired": true,
+        "n_written": 14,
+        "ok": true
+      },
+      {
+        "task": "rot13",
+        "split": "real",
+        "word": "afterthought",
+        "gold": "nsgregubhtug",
+        "pred": "nsgregubhtug",
+        "raw": "[XRAY rot13 | afterthought]=nsgregubhtug",
+        "fired": true,
+        "n_written": 13,
+        "ok": true
+      },
+      {
+        "task": "rot13",
+        "split": "real",
+        "word": "algorithmic",
+        "gold": "nytbevguzvp",
+        "pred": "nytbevguzvp",
+        "raw": "[XRAY rot13 | algorithmic]=nytbevguzvp",
+        "fired": true,
+        "n_written": 12,
+        "ok": true
+      },
+      {
+        "task": "rot13",
+        "split": "real",
+        "word": "amethyst",
+        "gold": "nzrgulfg",
+        "pred": "nzrgulfg",
+        "raw": "[XRAY rot13 | amethyst]=nzrgulfg",
+        "fired": true,
+        "n_written": 9,
+        "ok": true
+      },
+      {
+        "task": "rot13",
+        "split": "real",
+        "word": "archaeology",
+        "gold": "nepunrbybtl",
+        "pred": "nepunrbybtl",
+        "raw": "[XRAY rot13 | archaeology]=nepunrbybtl",
+        "fired": true,
+        "n_written": 12,
+        "ok": true
+      }
+    ],
+    "rot13_nonce": [
+      {
+        "task": "rot13",
+        "split": "nonce",
+        "word": "wwgtagawttrgii",
+        "gold": "jjtgntnjggetvv",
+        "pred": "jjtgntnjggetvv",
+        "raw": "[XRAY rot13 | wwgtagawttrgii]=jjtgntnjggetvv",
+        "fired": true,
+        "n_written": 15,
+        "ok": true
+      },
+      {
+        "task": "rot13",
+        "split": "nonce",
+        "word": "spurplitklad",
+        "gold": "fchecyvgxynq",
+        "pred": "fchecyvgxynq",
+        "raw": "[XRAY rot13 | spurplitklad]=fchecyvgxynq",
+        "fired": true,
+        "n_written": 13,
+        "ok": true
+      },
+      {
+        "task": "rot13",
+        "split": "nonce",
+        "word": "iovthqto",
+        "gold": "vbigudgb",
+        "pred": "vbigudgb",
+        "raw": "[XRAY rot13 | iovthqto]=vbigudgb",
+        "fired": true,
+        "n_written": 9,
+        "ok": true
+      },
+      {
+        "task": "rot13",
+        "split": "nonce",
+        "word": "paimtoibsmin",
+        "gold": "cnvzgbvofzva",
+        "pred": "cnvzgbvofzva",
+        "raw": "[XRAY rot13 | paimtoibsmin]=cnvzgbvofzva",
+        "fired": true,
+        "n_written": 13,
+        "ok": true
+      },
+      {
+        "task": "rot13",
+        "split": "nonce",
+        "word": "usqqdtu",
+        "gold": "hfddqgh",
+        "pred": "hfddqgh",
+        "raw": "[XRAY rot13 | usqqdtu]=hfddqgh",
+        "fired": true,
+        "n_written": 8,
+        "ok": true
+      }
+    ],
+    "count_multiword": [
+      {
+        "task": "count",
+        "split": "multiword",
+        "word": "continental supernova",
+        "gold": "4",
+        "pred": "4",
+        "raw": "[XRAY count n | continental supernova]=4",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "count",
+        "split": "multiword",
+        "word": "cauliflower perseverance",
+        "gold": "1",
+        "pred": "1",
+        "raw": "[XRAY count u | cauliflower perseverance]=1",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "count",
+        "split": "multiword",
+        "word": "quaternion empiricism spacecraft bewildered",
+        "gold": "5",
+        "pred": "5",
+        "raw": "[XRAY count i | quaternion empiricism spacecraft bewildered]=5",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "count",
+        "split": "multiword",
+        "word": "replenishing epistemology photography backpacker",
+        "gold": "3",
+        "pred": "3",
+        "raw": "[XRAY count r | replenishing epistemology photography backpacker]=3",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      },
+      {
+        "task": "count",
+        "split": "multiword",
+        "word": "chrysanthemum considerate",
+        "gold": "3",
+        "pred": "3",
+        "raw": "[XRAY count e | chrysanthemum considerate]=3",
+        "fired": true,
+        "n_written": 2,
+        "ok": true
+      }
+    ]
+  }
+}

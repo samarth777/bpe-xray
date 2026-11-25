@@ -1,0 +1,160 @@
+{
+  "model": "Qwen/Qwen3-0.6B-Base",
+  "arm": "v2_frozen",
+  "tap_layers": [
+    16,
+    20,
+    24
+  ],
+  "n_train": 128,
+  "seed": 42,
+  "trainable_params": {
+    "lora": 0,
+    "v2_taps": 6468096,
+    "total": 6468096
+  },
+  "train_seconds": 20.28,
+  "final_loss": 0.03642162692267448,
+  "prose_ppl_base_heldout": 30.4374,
+  "prose_ppl_post_heldout": 30.3916,
+  "test_real_overall": 25.48,
+  "test_real_per_task": {
+    "count": 43.33,
+    "delete": 3.33,
+    "double": 56.67,
+    "length": 51.67,
+    "nth": 20.0,
+    "replace": 3.33,
+    "reverse": 0.0
+  },
+  "test_nonce_overall": 28.81,
+  "test_nonce_per_task": {
+    "count": 50.0,
+    "delete": 13.33,
+    "double": 75.0,
+    "length": 28.33,
+    "nth": 26.67,
+    "replace": 8.33,
+    "reverse": 0.0
+  },
+  "test_compound_overall": 19.29,
+  "test_compound_per_task": {
+    "count": 37.5,
+    "delete": 2.5,
+    "double": 40.0,
+    "length": 35.0,
+    "nth": 17.5,
+    "replace": 2.5,
+    "reverse": 0.0
+  },
+  "test_cross_double": 52.5,
+  "test_ood_multiword": 20.0,
+  "test_ood_anagram": 61.67,
+  "adversarial_bpe": {
+    "canonical": 26.25,
+    "adversarial": 26.88
+  },
+  "causal": {
+    "blindfold_real": 17.62,
+    "blindfold_real_per_task": {
+      "count": 31.67,
+      "delete": 0.0,
+      "double": 75.0,
+      "length": 16.67,
+      "nth": 0.0,
+      "replace": 0.0,
+      "reverse": 0.0
+    },
+    "blindfold_nonce": 7.86,
+    "blindfold_nonce_per_task": {
+      "count": 25.0,
+      "delete": 0.0,
+      "double": 23.33,
+      "length": 6.67,
+      "nth": 0.0,
+      "replace": 0.0,
+      "reverse": 0.0
+    },
+    "blindfold_compound": 16.79,
+    "blindfold_cross_double": 51.25,
+    "optical_illusion": {
+      "strawberry_tokens": [
+        "How",
+        " many",
+        " times",
+        " does",
+        " the",
+        " letter",
+        " '",
+        "r",
+        "'",
+        " appear",
+        " in",
+        " '",
+        "str",
+        "aw",
+        "berry",
+        "'",
+        "?\n",
+        "Answer",
+        ":"
+      ],
+      "perturbed_token_span": [
+        12,
+        13,
+        14
+      ],
+      "perturbed_token_strs": [
+        "str",
+        "aw",
+        "berry"
+      ],
+      "strawberry_sweep": [
+        {
+          "delta": -2,
+          "true_count": 3,
+          "illusion_target": "1",
+          "model_pred": "2",
+          "followed_illusion": false
+        },
+        {
+          "delta": -1,
+          "true_count": 3,
+          "illusion_target": "2",
+          "model_pred": "2",
+          "followed_illusion": true
+        },
+        {
+          "delta": 0,
+          "true_count": 3,
+          "illusion_target": "3",
+          "model_pred": "2",
+          "followed_illusion": false
+        },
+        {
+          "delta": 1,
+          "true_count": 3,
+          "illusion_target": "4",
+          "model_pred": "2",
+          "followed_illusion": false
+        },
+        {
+          "delta": 2,
+          "true_count": 3,
+          "illusion_target": "5",
+          "model_pred": "2",
+          "followed_illusion": false
+        },
+        {
+          "delta": 3,
+          "true_count": 3,
+          "illusion_target": "6",
+          "model_pred": "2",
+          "followed_illusion": false
+        }
+      ],
+      "systematic_25w_fidelity": 16.0,
+      "systematic_25w_n": 50
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "model": "Qwen/Qwen3-0.6B-Base",
+  "arm": "v1_lora",
+  "tap_layers": [
+    14,
+    20,
+    24
+  ],
+  "n_train": 4096,
+  "seed": 42,
+  "trainable_params": {
+    "lora": 5046272,
+    "v1_cortex": 8352768,
+    "total": 13399040
+  },
+  "train_seconds": 235.45,
+  "final_loss": 0.1300345470153843,
+  "prose_ppl_base_heldout": 32.9485,
+  "prose_ppl_post_heldout": 33.2558,
+  "test_real_overall": 49.76,
+  "test_real_per_task": {
+    "count": 61.67,
+    "delete": 30.0,
+    "double": 91.67,
+    "length": 76.67,
+    "nth": 56.67,
+    "replace": 26.67,
+    "reverse": 5.0
+  },
+  "test_nonce_overall": 61.43,
+  "test_nonce_per_task": {
+    "count": 80.0,
+    "delete": 55.0,
+    "double": 91.67,
+    "length": 81.67,
+    "nth": 61.67,
+    "replace": 51.67,
+    "reverse": 8.33
+  },
+  "test_compound_overall": 46.07,
+  "test_compound_per_task": {
+    "count": 65.0,
+    "delete": 32.5,
+    "double": 82.5,
+    "length": 75.0,
+    "nth": 40.0,
+    "replace": 27.5,
+    "reverse": 0.0
+  },
+  "test_cross_double": 78.75,
+  "test_ood_multiword": 35.0,
+  "test_ood_anagram": 45.0,
+  "adversarial_bpe": {
+    "canonical": 48.12,
+    "adversarial": 60.0
+  },
+  "causal": {
+    "blindfold_real": 45.71,
+    "blindfold_real_per_task": {
+      "count": 65.0,
+      "delete": 26.67,
+      "double": 75.0,
+      "length": 76.67,
+      "nth": 51.67,
+      "replace": 21.67,
+      "reverse": 3.33
+    },
+    "blindfold_nonce": 61.19,
+    "blindfold_nonce_per_task": {
+      "count": 83.33,
+      "delete": 56.67,
+      "double": 80.0,
+      "length": 80.0,
+      "nth": 61.67,
+      "replace": 56.67,
+      "reverse": 10.0
+    },
+    "blindfold_compound": 43.93,
+    "blindfold_cross_double": 48.75,
+    "optical_illusion": {
+      "strawberry_tokens": [
+        "How",
+        " many",
+        " times",
+        " does",
+        " the",
+        " letter",
+        " '",
+        "r",
+        "'",
+        " appear",
+        " in",
+        " '",
+        "str",
+        "aw",
+        "berry",
+        "'",
+        "?\n",
+        "Answer",
+        ":"
+      ],
+      "perturbed_token_span": [
+        12,
+        13,
+        14
+      ],
+      "perturbed_token_strs": [
+        "str",
+        "aw",
+        "berry"
+      ],
+      "strawberry_sweep": [
+        {
+          "delta": -2,
+          "true_count": 3,
+          "illusion_target": "1",
+          "model_pred": "3",
+          "followed_illusion": false
+        },
+        {
+          "delta": -1,
+          "true_count": 3,
+          "illusion_target": "2",
+          "model_pred": "3",
+          "followed_illusion": false
+        },
+        {
+          "delta": 0,
+          "true_count": 3,
+          "illusion_target": "3",
+          "model_pred": "3",
+          "followed_illusion": true
+        },
+        {
+          "delta": 1,
+          "true_count": 3,
+          "illusion_target": "4",
+          "model_pred": "3",
+          "followed_illusion": false
+        },
+        {
+          "delta": 2,
+          "true_count": 3,
+          "illusion_target": "5",
+          "model_pred": "3",
+          "followed_illusion": false
+        },
+        {
+          "delta": 3,
+          "true_count": 3,
+          "illusion_target": "6",
+          "model_pred": "3",
+          "followed_illusion": false
+        }
+      ],
+      "systematic_25w_fidelity": 8.0,
+      "systematic_25w_n": 50
+    }
+  }
+}

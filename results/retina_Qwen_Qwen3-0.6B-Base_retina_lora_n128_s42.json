@@ -1,0 +1,140 @@
+{
+  "model": "Qwen/Qwen3-0.6B-Base",
+  "arm": "retina_lora",
+  "n_train": 128,
+  "seed": 42,
+  "trainable_params": {
+    "lora": 10092544,
+    "optic": 720384,
+    "total": 10812928
+  },
+  "train_seconds": 18.25,
+  "final_loss": 0.014935830535250716,
+  "prose_ppl_base": 25.8947,
+  "prose_ppl_post": 32.013,
+  "test_real_overall": 30.48,
+  "test_real_per_task": {
+    "count": 50.0,
+    "delete": 11.67,
+    "double": 66.67,
+    "length": 43.33,
+    "nth": 35.0,
+    "replace": 6.67,
+    "reverse": 0.0
+  },
+  "test_nonce_overall": 34.05,
+  "test_nonce_per_task": {
+    "count": 46.67,
+    "delete": 21.67,
+    "double": 80.0,
+    "length": 26.67,
+    "nth": 48.33,
+    "replace": 15.0,
+    "reverse": 0.0
+  },
+  "test_cross_double": 50.0,
+  "test_ood_multiword": 33.33,
+  "test_ood_anagram": 56.67,
+  "causal": {
+    "blindfold_real": 29.29,
+    "blindfold_real_per_task": {
+      "count": 43.33,
+      "delete": 8.33,
+      "double": 68.33,
+      "length": 43.33,
+      "nth": 35.0,
+      "replace": 6.67,
+      "reverse": 0.0
+    },
+    "blindfold_nonce": 35.24,
+    "blindfold_nonce_per_task": {
+      "count": 48.33,
+      "delete": 26.67,
+      "double": 80.0,
+      "length": 26.67,
+      "nth": 50.0,
+      "replace": 15.0,
+      "reverse": 0.0
+    },
+    "blindfold_cross_double": 50.0,
+    "optical_illusion": {
+      "strawberry_tokens": [
+        "How",
+        " many",
+        " times",
+        " does",
+        " the",
+        " letter",
+        " '",
+        "r",
+        "'",
+        " appear",
+        " in",
+        " '",
+        "str",
+        "aw",
+        "berry",
+        "'",
+        "?\n",
+        "Answer",
+        ":"
+      ],
+      "perturbed_token_span": [
+        12,
+        13,
+        14
+      ],
+      "perturbed_token_strs": [
+        "str",
+        "aw",
+        "berry"
+      ],
+      "strawberry_sweep": [
+        {
+          "delta": -2,
+          "true_count": 3,
+          "illusion_target": "1",
+          "model_pred": "2",
+          "followed_illusion": false
+        },
+        {
+          "delta": -1,
+          "true_count": 3,
+          "illusion_target": "2",
+          "model_pred": "2",
+          "followed_illusion": true
+        },
+        {
+          "delta": 0,
+          "true_count": 3,
+          "illusion_target": "3",
+          "model_pred": "2",
+          "followed_illusion": false
+        },
+        {
+          "delta": 1,
+          "true_count": 3,
+          "illusion_target": "4",
+          "model_pred": "2",
+          "followed_illusion": false
+        },
+        {
+          "delta": 2,
+          "true_count": 3,
+          "illusion_target": "5",
+          "model_pred": "2",
+          "followed_illusion": false
+        },
+        {
+          "delta": 3,
+          "true_count": 3,
+          "illusion_target": "6",
+          "model_pred": "2",
+          "followed_illusion": false
+        }
+      ],
+      "systematic_25w_fidelity": 8.0,
+      "systematic_25w_n": 50
+    }
+  }
+}
